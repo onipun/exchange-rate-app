@@ -36,7 +36,8 @@ class App extends React.Component {
   updateData = () => {
     const { exchangeFrom, exchangeTo } = this.state;
     console.log(`exhange from ${exchangeFrom}, exchange to ${exchangeTo},`, this.state);
-    fetch(`http://localhost:8080/exchange/getRate?exchangeFrom=${exchangeFrom}&exchangeTo=${exchangeTo}`)
+    fetch(`https://rate-serive.herokuapp.com/exchange/getRate?exchangeFrom=${exchangeFrom}&exchangeTo=${exchangeTo}`)
+    // fetch(`http://localhost:8080/exchange/getRate?exchangeFrom=${exchangeFrom}&exchangeTo=${exchangeTo}`)
       .then(res => res.json())
       .then(
         (result) => {
