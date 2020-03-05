@@ -57,7 +57,7 @@ class App extends React.Component {
       )}
 
   render() {
-    const { error, isLoaded, exchangeRate, currentRate } = this.state;
+    const { error, isLoaded, exchangeRate, currentRate,exchangeFrom } = this.state;
     if (error) {
       return <div>Error: {error.message}</div>;
     } else if (!isLoaded) {
@@ -84,7 +84,7 @@ class App extends React.Component {
           </div>
 
           <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" />
-          <p>current latest rate: {currentRate}</p>
+      <p>{exchangeFrom} current latest rate: {currentRate}</p>
           <p>Result: {exchangeRate}</p>
         </div>
       );
